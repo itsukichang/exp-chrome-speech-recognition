@@ -47,9 +47,6 @@ function getLang () {
   return lang;
 }
 
-function getStopPhrase () {
-  return elStopPhrase.value;
-}
 
 function setErrorMessage (message) {
   errorMessage = message;
@@ -99,10 +96,6 @@ function main () {
   sr = new window.SpeechRecognition();
 
   sr.lang = getLang();
-  const initialStopPhrase = langStopPhraseMap.get(sr.lang);
-  if (initialStopPhrase) {
-    elStopPhrase.value = initialStopPhrase;
-  }
 
   sr.addEventListener('error', (event) => {
     const message = event.message || String(event.error);
@@ -112,7 +105,6 @@ function main () {
 
   sr.addEventListener('result', (event) => {
     const text = getRecognizedText(event);
-    const stopPhrase = getStopPhrase();
     elResult.textContent += `${text}.`;
   });
 
