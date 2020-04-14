@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exp Chrome Speech Recognition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Chrome Speech Recognition</h1>
+  <div id="app">
+    <p>
+      Languages:
+      <a href="/exp-chrome-speech-recognition/">Default</a>
+      ,
+      <a href="/exp-chrome-speech-recognition/?lang=en">EN (English)</a>
+      ,
+      <a href="/exp-chrome-speech-recognition/?lang=ja">JA (日本語)</a>
+    </p>
+    <p>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+      <button id="reset">reset</button>
+      <span id="recognitionStatus" class="status" data-on="false">Recognition</span>
+      <span id="audioStatus" class="status" data-on="false">Audio</span>
+      <span id="soundStatus" class="status" data-on="false">Sound</span>
+      <span id="speechStatus" class="status" data-on="false">Speech</span>
+    </p>
+    <p id="error"></p>
+    <p>
+      <span id="listening">🔊</span>
+      <span>result: </span>
+      <span id="result"></span>
+    </p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

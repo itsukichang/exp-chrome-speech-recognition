@@ -1,0 +1,46 @@
+button {
+  height: 3em;
+  min-width: 5em;
+}
+.status {
+  display: inline-block;
+  height: 3em;
+  line-height: 3em;
+  min-width: 5em;
+  opacity: 0.3;
+  text-align: center;
+  transition: opacity 300ms;
+}
+.status[data-on="true"] {
+  opacity: 1;
+}
+#recognitionStatus {
+  background-color: lightgray;
+}
+#audioStatus {
+  background-color: tomato;
+  outline-color: tomato;
+}
+#soundStatus {
+  background-color: limegreen;
+}
+#speechStatus {
+  background-color: skyblue;
+}
+#error {
+  color: tomato;
+}
+#error:not(:empty)::before {
+  content: "Error: ";
+}
+#listening {
+  visibility: hidden;
+}
+#listening[data-on="true"] {
+  animation: flickering 1000ms infinite step-end;
+  visibility: visible;
+}
+@keyframes flickering {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+}
